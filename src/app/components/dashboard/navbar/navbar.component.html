@@ -1,0 +1,19 @@
+<p>
+    <mat-toolbar color="primary">
+        <span class="material-icons">
+            webhook
+            </span>
+    <span>&nbsp;Reciplas</span>
+    <span class="example-spacer"></span>
+    <button mat-button *ngFor= "let item of menu" [routerLink]="item.redirect">
+        <span class="material-icons">{{item.icons}}</span>
+        {{ &nbsp; item.nombre }}</button>
+ 
+    <span class="example-spacer"></span>
+
+    <button (click) = "logOut()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+    
+  </mat-toolbar>
+  </p>

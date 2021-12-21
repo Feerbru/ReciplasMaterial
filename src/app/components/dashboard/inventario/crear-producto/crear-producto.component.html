@@ -1,0 +1,96 @@
+<div class="container">
+    <mat-toolbar class="mat-elevation-z8">
+        <span>Registrar Artículo Nuevo</span>
+        <div class="example-spacer"></div>
+          <button class="pointer" routerLink="/dashboard/inventario" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>close</mat-icon>
+          </button>
+
+      </mat-toolbar>
+
+      <mat-card style="margin-top: 10px;">
+
+        <form [formGroup]="form1" (ngSubmit)="agregarArticulo()">
+
+            <mat-grid-list cols= "4" rowHeight="70px">
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput autocomplete="off" formControlName="nombre" >
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                    <mat-form-field class="ancho">
+                        <mat-label>Tipo de Articulo</mat-label>
+                        <mat-select formControlName="tipo_de_articulo">
+                          <mat-option *ngFor="let item of tipo_articulo" [value]="item">
+                            {{item}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                    <mat-form-field class="ancho">
+                        <mat-label>Descripción</mat-label>
+                        <input matInput autocomplete="off" formControlName="descripcion" >
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                    <mat-form-field class="ancho">
+                        <mat-label>Categoria</mat-label>
+                        <mat-select formControlName="categoria">
+                          <mat-option *ngFor="let item of categoria" [value]="item">
+                            {{item.nombre}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                    <mat-form-field class="ancho">
+                        <mat-label>Stock</mat-label>
+                        <input matInput autocomplete="off" formControlName="stock">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                  <mat-form-field class="ancho">
+                      <mat-label>Stock Minimo</mat-label>
+                      <input matInput autocomplete="off" formControlName="stock_minimo">
+                    </mat-form-field>
+              </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                    <mat-form-field class="ancho">
+                        <mat-label>Unidad de Medida</mat-label>
+                        <mat-select formControlName="unidad_de_medida">
+                          <mat-option *ngFor="let item of unidad_medida" [value]="item">
+                            {{item.nombre}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                   <mat-form-field class="ancho">
+                        <mat-label>Precio</mat-label>
+                        <input matInput autocomplete="off" formControlName="precio_de_venta">
+                      </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                  
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]="1" >
+                    <button type="submit" [disabled]="form1.invalid" mat-raised-button color="primary">Aceptar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+             
+        </form>
+    </mat-card>
+
+</div>

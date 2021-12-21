@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "Inicio",
+        "redirect": "/dashboard",
+        "icons": "home"
+    },
+    {
+        "nombre": "Inventario",
+        "redirect": "/dashboard/inventario",
+        "icons": "inventory"
+    },
+    {
+        "nombre": "Compras",
+        "redirect": "/dashboard/compras",
+        "icons": "account_balance_wallet"
+    },
+    {
+        "nombre": "Reportes",
+        "redirect": "/dashboard/reportes",
+        "icons": "analytics"
+    }
+
+]  
